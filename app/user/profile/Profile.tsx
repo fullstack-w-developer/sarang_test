@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import React from "react";
-import Logo from "@/assets/images/logo_white.svg";
+import Logo from "@/assets/images/logo.png";
 import MoreMenu from "@/components/common/MoreMenu";
 import { menuUser, moreMenuUser } from "@/helper/utils/data";
 import SocialMedia from "@/components/common/SocialMedia";
@@ -20,7 +20,7 @@ const Profile = ({ user }: { user: User }) => {
         <>
             <div className="@bg-[#f8f8f8] min-h-screen">
                 <div className="bg_profile pb-10 pt-8 flex justify-center items-center">
-                    <Image alt="" src={Logo} />
+                    <Image height={80} alt="" src={Logo} />
                 </div>
                 <div className="bg-white min-h-screen px-4 rounded-t-[28px] -mt-6">
                     <InfoUser user={user} />

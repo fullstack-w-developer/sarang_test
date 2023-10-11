@@ -30,14 +30,14 @@ const Input = ({ icon, placeholder,maxLength, classInput, ltr,subTitle, label, c
                     <span className="text-xs font-artin-regular text-white">هزینه<br/> توافقی</span>
                 </div>
                 }
-                {icon}
+                {icon &&<span className="mr-2">{icon}</span>}
                 <input
                 maxLength={maxLength}
                     type={type}
                     value={formik.values[name!]}
                     onChange={(e) => formik.setFieldValue(name, e.target.value)}
                     name={name}
-                    className={`bg-transparent outline-none placeholder:text-right font-artin-regular  text-[14px] w-full text-inherit placeholder:text-[#d6d6d6] ${classInputTag}  ${
+                    className={`bg-transparent outline-none pr-2 placeholder:text-right font-artin-regular  text-[14px] w-full text-inherit placeholder:text-[#d6d6d6] ${classInputTag}  ${
                         ltr ? "ltr" : "rtl"
                     } ${formik.touched[name!] && formik.errors[name!] && "bg-[#fbbe7b]"}`}
                     placeholder={placeholder}

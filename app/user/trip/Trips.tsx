@@ -4,6 +4,7 @@ import CardTrip from "@/components/common/CardTrip";
 import { Trip } from "@/types/Driver/ResponseUserTripQuery";
 import React from "react";
 import { motion } from "framer-motion";
+import { tripsFackdata } from "@/helper/utils/data";
 interface Props {
     trips: Trip[];
 }
@@ -19,7 +20,7 @@ const Trips = ({ trips }: Props) => {
             >
                 <BackHeader url="/user/profile" name="سفرها" />
                 <div className="flex flex-col gap-5 mt-10 pb-10">
-                    {trips.map((trip, index) => (
+                    {tripsFackdata.map((trip:any, index) => (
                         <CardTrip trip={trip} key={index} />
                     ))}
                 </div>

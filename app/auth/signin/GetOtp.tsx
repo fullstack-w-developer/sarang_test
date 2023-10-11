@@ -29,7 +29,7 @@ const Getotp = ({ text, formik, isLogin, isPass }: Props) => {
                             {text && <p className="font-artin-regular pb-3">{text}</p>}
                             <input type="text" id="xusername" style={{ display: "none" }} autoComplete="username" />
                             <input type="password" id="xpassword" style={{ display: "none" }} autoComplete="current-password" />
-                            <Input
+                            <Input maxLength={11}
                                 formik={formik}
                                 name="phone"
                                 type="tel"
