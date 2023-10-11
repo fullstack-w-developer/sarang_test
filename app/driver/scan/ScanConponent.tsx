@@ -26,7 +26,7 @@ const ScanComponent = () => {
             handleStop();
         };
 
-        await html5QrCode.start({ facingMode: "uenvironmentser" }, qrConfig, qrCodeSuccessCallback);
+        await html5QrCode.start({ facingMode: "environmentser" }, qrConfig, qrCodeSuccessCallback);
     };
 
     const handleStop = () => {

@@ -1,10 +1,13 @@
 import Image from "next/image";
 import React from "react";
-import User from "@/assets/images/user.png";
-const ProfileImage = () => {
+import {FcBusinessman, FcBusinesswoman} from "react-icons/fc"
+import { User } from "@/types/User";
+const ProfileImage = ({user}:{user:User}) => {
+    console.log(user)
     return (
         <div className="bg-orange rounded-full w-16 h-16 flex justify-center items-center">
-            <Image src={User} alt="" />
+            
+        {user.Sex === "مرد" ?<FcBusinessman size={36}/>:<FcBusinesswoman size={36}/>}
         </div>
     );
 };

@@ -36,11 +36,17 @@ const Rate = () => {
                         }}
                     />
                     <ul className="flex items-center gap-[23px]">
-                      {new Array(5).fill(5).map((item,idx) =>(
-                        <li key={idx} className="font-bold">{toFarsiNumber(idx+1)}</li>
-                      ))}
+                        {new Array(5).fill(5).map((item, idx) => (
+                            <li key={idx} className="font-bold">{toFarsiNumber(idx + 1)}</li>
+                        ))}
                     </ul>
+
                     {error && <span className="text-red-500 font-artin-regular pt-3">{error}</span>}
+
+                </div>
+                <div className="w-[90%] mx-auto">
+                    <label className="font-artin-bold">توضیحات:</label>
+                    <textarea placeholder="توضیحات خود را اینجا بنویسید" rows={5} className="border p-2 resize-none w-full font-artin-regular border-neutral-200 rounded-md" />
                 </div>
 
                 <div className=" mt-14 flex gap-4 items-center">

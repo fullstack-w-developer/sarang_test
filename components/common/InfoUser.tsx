@@ -12,7 +12,7 @@ const InfoUser = ({ user }: { user: User }) => {
         <div className="border-b border-gray-200 pb-5">
             <div className="py-6 h-full  flex justify-between items-center">
                 <div className="flex items-center gap-1 ">
-                    <ProfileImage />
+                    <ProfileImage user={user}/>
                     <div>
                         <p className="font-artin-bold text-xl">
                             {user?.FirstName} {user?.LastName}

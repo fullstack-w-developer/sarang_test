@@ -1,3 +1,4 @@
+import { toFarsiNumber } from "@/helper/utils/toFarsiNumber";
 import React from "react";
 
 const Info = () => {
@@ -21,6 +22,12 @@ const Info = () => {
                         <span className="block w-1 h-1 mt-3 bg-gray-800 rounded-full"></span>
                         <p className="font-artin-regular">
                             بعد از وارد کد کد، اطلاعات راننده را میتوانید مشاهده و کرایه را پرداخت کنید
+                        </p>
+                    </li>
+                    <li className="flex items-start  gap-3">
+                        <span className="block w-1 h-1 mt-3 bg-gray-800 rounded-full"></span>
+                        <p className="font-artin-regular">
+                        کد شهری راننده تاکسی گردشی به صورت آزمایشی <span className="font-artin-bold text-orange">{toFarsiNumber(77)}</span> و راننده معمولی <span className="font-artin-bold text-orange">{toFarsiNumber(23456)}</span> در نظر گرفته شده است
                         </p>
                     </li>
                 </ul>

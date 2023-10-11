@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
-import Logo from "@/assets/images/logo_white.svg";
+import Logo from "@/assets/images/logo.png";
 import Link from "next/link";
 import { BsFillLockFill, BsPhone } from "react-icons/bs";
 import Input from "@/components/common/Input";
@@ -11,11 +11,12 @@ interface Props {
     isPass?: boolean;
 }
 const Getotp = ({ text, formik, isLogin, isPass }: Props) => {
+
     return (
         <div>
             <div className="rounded-b-[26px] z-30  shadow-md text-white bg_header bg_line h-fit flex flex-col py-5 justify-center items-center">
                 <div className="w-[85%] mx-auto">
-                    <Image className="mx-auto" src={Logo} alt="لوگو" />
+                    <Image width={260} height={260} className="mx-auto" src={Logo} alt="لوگو" />
                     <div className="pt-5 flex flex-col gap-4 justify-center items-center">
                         <p className="font-artin-regular">به اپلیکیشن تاکسی‌نو</p>
                         <div className="flex gap-2 items-center">

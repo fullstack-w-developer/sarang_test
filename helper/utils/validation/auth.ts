@@ -21,5 +21,5 @@ export const validationSchemaCheckCode = Yup.object({
     Code: Yup.string().required("فیلد اجباری است"),
 });
 export const validationSchemaAmount = Yup.object({
-    amount: Yup.string().required("فیلد اجباری است"),
+    amount: Yup.string().min(4).required("مبلغ نمی تواند کمتر از ریال باشد ۱۰۰۰").max(1000000).required("پرداخت نمی تواند بیش از ۱۰۰ هزار ریال باشد").required("فیلد اجباری است"),
 });

@@ -1,6 +1,6 @@
 "use client";
 import Input from "@/components/common/Input";
-import React from "react";
+import React, { useState } from "react";
 import Button from "@/components/common/Button";
 import { BsFillLockFill } from "react-icons/bs";
 import { sexPerson } from "@/helper/utils/data";
@@ -13,7 +13,10 @@ import { animationsScreens } from "@/theme/animations";
 import { convertObjectEnglishNumber } from "@/helper/utils/converObject";
 import useAuthStore from "@/stores/auth-store";
 import useSignupUserMutation from "@/hooks/mutation/auth/useSignupUserMutation";
+import {AiFillEye,AiFillEyeInvisible} from "react-icons/ai"
 const Information = () => {
+    const [show,setShow] = useState(false)
+    const [show1,setShow1] = useState(false)
     const { mutate, isLoading } = useSignupUserMutation();
     const { user } = useAuthStore();
     const formik = useFormik({
@@ -47,22 +50,22 @@ const Information = () => {
                     />
 
                     <Input
-                        type="password"
+                        type={show ?"text":"password"}
                         ltr
                         formik={formik}
                         name="password"
                         classInput="bg-[#EFF2F6] border-[1.5px] border-gray-300"
                         label="رمز عبور"
-                        icon={<BsFillLockFill size={24} />}
+                        icon={show ? <AiFillEye onClick={()=>setShow(!show)} size={20}/> :<AiFillEyeInvisible onClick={()=>setShow(!show)} size={20} /> }
                     />
                     <Input
-                        type="password"
+                       type={show1 ?"text":"password"}
                         ltr
                         formik={formik}
                         name="repPassword"
                         classInput="bg-[#EFF2F6] border-[1.5px] border-gray-300"
                         label="تکرار رمز عبور"
-                        icon={<BsFillLockFill size={24} />}
+                        icon={show1 ? <AiFillEye onClick={()=>setShow1(!show1)} size={20}/> :<AiFillEyeInvisible onClick={()=>setShow1(!show1)} size={20}/> }
                     />
                     <CustomRadioButton list={sexPerson} formik={formik} name="sex" />
                 </form>

@@ -4,6 +4,7 @@ import { useRouter } from "next/navigation";
 // @ts-ignore
 import Music from "@/assets/music/notfication.mp3";
 import { farePayment } from "@/services/fare";
+import { errorToast } from "@/helper/utils/error";
 const useFarePaymentMutation = ({ url }: { url: string }) => {
     const telegramAudioRef = useRef<HTMLAudioElement | undefined>(typeof Audio !== "undefined" ? new Audio(Music) : undefined);
     const router = useRouter();
@@ -12,7 +13,9 @@ const useFarePaymentMutation = ({ url }: { url: string }) => {
             await telegramAudioRef.current?.play();
             router.push(url);
         },
-        onError: async function (error) {},
+        onError: async function (error) {
+            errorToast("لطفا حساب کاربری خود را شارژ کنید")
+        },
     });
 };
 

@@ -1,5 +1,4 @@
-import { toFarsiNumber } from "@/helper/utils/toFarsiNumber";
-import React from "react";
+import {useState} from "react";
 interface Props {
     icon?: JSX.Element;
     placeholder?: string;
@@ -10,19 +9,30 @@ interface Props {
     classInputTag?: string;
     name?: string;
     formik?: any;
+    subTitle?:string;
     type?: string;
+    maxLength?:number
 }
-const Input = ({ icon, placeholder, classInput, ltr, label, classInputTag, name, formik, type }: Props) => {
+const Input = ({ icon, placeholder,maxLength, classInput, ltr,subTitle, label, classInputTag, name, formik, type }: Props) => {
+    
     return (
         <div>
             {label && <label className="font-artin-regular lg:text-[12px] block mb-1 pr-1 text-[#2F2F2F]">{label}</label>}
+
             <div
-                className={`flex gap-1 w-full h-[52px] lg:h-[40px] border bg-[#EFF2F6]  rounded-lg px-2 items-center ${
+                className={`flex gap-1 w-full h-[52px] lg:h-[40px] overflow-hidden border bg-[#EFF2F6]  rounded-lg pl-2 items-center ${
                     formik && formik.touched[name!] && formik.errors[name!] ? "!border-[#E40000]" : "border-transparent"
                 }  ${classInput}`}
             >
+                {
+                    subTitle &&
+                <div className="bg-orange flex justify-center items-center h-full w-20">
+                    <span className="text-xs font-artin-regular text-white">هزینه<br/> توافقی</span>
+                </div>
+                }
                 {icon}
                 <input
+                maxLength={maxLength}
                     type={type}
                     value={formik.values[name!]}
                     onChange={(e) => formik.setFieldValue(name, e.target.value)}

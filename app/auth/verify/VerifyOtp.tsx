@@ -1,9 +1,9 @@
 "use client";
 import Image from "next/image";
-import Logo from "@/assets/images/logo_white.svg";
+import Logo from "@/assets/images/logo.png";
 import { BsArrowLeftShort } from "react-icons/bs";
 import Button from "@/components/common/Button";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { useFormik } from "formik";
 import { initialValuesCheckCode } from "@/helper/utils/initialValues";
 import { validationSchemaCheckCode } from "@/helper/utils/validation/auth";
@@ -16,6 +16,7 @@ import { toEnglishNumber } from "@/helper/utils/toFarsiNumber";
 import useAuthStore from "@/stores/auth-store";
 import { Edit_icon, Phone_icon, Warr_iocn } from "@/components/icons/icons";
 import Link from "next/link";
+import { useEffect } from "react";
 
 const VerifyOtp = () => {
     const { user } = useAuthStore();
@@ -28,6 +29,9 @@ const VerifyOtp = () => {
             mutate({ Code: Number(values.Code), Phone: toEnglishNumber(user?.phone!)! });
         },
     });
+
+
+
 
     return (
         <motion.div {...animationsScreens} className="flex flex-col justify-between h-screen">
@@ -52,10 +56,10 @@ const VerifyOtp = () => {
                     <Otp formik={formik} />
                     <div className="flex justify-between items-center mt-8">
                         <Timer />
-                        <Link href="/auth/signin" className="flex items-center gap-1">
+                        <button onClick={()=>router.back()} className="flex items-center gap-1">
                             <Edit_icon fill="#F67D14" />
                             <p className="font-artin-regular text-[12px] text-orange">تغیر شماره تلفن</p>
-                        </Link>
+                        </button>
                     </div>
                 </div>
             </div>

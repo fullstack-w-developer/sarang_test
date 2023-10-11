@@ -33,6 +33,7 @@ const Result = () => {
                     </motion.div>
                 </motion.div>
                    <div className="h-[300px] w-[90%] mx-auto flex justify-center items-center font-bold border">محل تبلیغ شما</div>
+                   <p className="txet-center font-artin-bold text-orange mx-auto -mt-20">با تشکر از پرداخت شما</p>
                 <motion.div initial={{ x: 500 }} animate={{ x: 0 }} transition={{ duration: 1 }} className="w-90 mb-4">
                     <Button onClick={() => router.push("/user")} className="!bg-[#464646]" name="بازگشت به صحفه اصلی" />
                 </motion.div>
