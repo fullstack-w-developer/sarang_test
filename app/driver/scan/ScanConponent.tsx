@@ -47,7 +47,7 @@ const ScanComponent = () => {
     };
 
     const onResult = () => {
-        router.push(`/driver/inquiry?serial=${"64b61e3449917959a31ade53"}&type=${PaymentTypeEnum.DRIVER_SCAN_USER_CARD}`);
+        router.push(`/driver/inquiry?serial=${"64b2a91ae675114d2abfa860"}&type=${PaymentTypeEnum.DRIVER_SCAN_USER_CARD}`);
         return handleStop();
     };
 

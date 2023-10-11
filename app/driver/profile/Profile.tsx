@@ -26,7 +26,7 @@ const Profile = ({user}:Props) => {
                 <div className="bg-white min-h-screen px-4 rounded-t-[28px] -mt-6">
                     <InfoUser user={user} />
                     <MoreMenu list={MoreMenuDriver} />
-                    <SocialMedia />
+                    {/* <SocialMedia /> */}
                     <button
                         onClick={toggleLogout}
                         className="w-full px-2 mt-7 flex items-center gap-2 py-4 rounded-lg text-[#DF2040] bg-[#FCE9EC]"

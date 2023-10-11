@@ -112,21 +112,6 @@ export const MoreMenuDriver = [
         icon: FaCar,
         url: "/driver/trip",
     },
-    {
-        name: "تسویه",
-        icon: FaCar,
-        url: "/driver/checkout",
-    },
-    {
-        name: "تسویه حساب ها اخیر",
-        icon: FaCar,
-        url: "/driver/checkout/recently",
-    },
-    {
-        name: "امتیاز‌ها",
-        icon: FaCar,
-        url: "/driver/checkout/recently",
-    },
 ];
 
 export const social_media = [
