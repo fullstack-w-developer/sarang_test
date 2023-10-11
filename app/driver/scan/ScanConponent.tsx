@@ -42,6 +42,8 @@ const ScanComponent = () => {
         }
     };
 
+
+    
     const backScreen = () => {
         return handleStop();
     };
