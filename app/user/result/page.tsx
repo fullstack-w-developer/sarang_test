@@ -32,7 +32,7 @@ const Result = () => {
                         <Image fill src={ResultImage} alt="" />
                     </motion.div>
                 </motion.div>
-
+                   <div className="h-[300px] w-[90%] mx-auto flex justify-center items-center font-bold border">محل تبلیغ شما</div>
                 <motion.div initial={{ x: 500 }} animate={{ x: 0 }} transition={{ duration: 1 }} className="w-90 mb-4">
                     <Button onClick={() => router.push("/user")} className="!bg-[#464646]" name="بازگشت به صحفه اصلی" />
                 </motion.div>

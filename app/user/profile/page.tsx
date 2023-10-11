@@ -1,7 +1,7 @@
 import React from "react";
-import Profile from "./Profile";
-import { getUser } from "@/services/user";
-
+import dynamic from "next/dynamic";
+import { getUser } from "@/server/user/actions";
+const Profile = dynamic(()=>import("./Profile"),{ssr:false})
 const InformationUser = async () => {
     const user = await getUser();
 

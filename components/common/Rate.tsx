@@ -4,6 +4,7 @@ import { AiFillStar } from "react-icons/ai";
 import Button from "./Button";
 import useRateToTaxiMutation from "@/hooks/mutation/user/useRateToTaxiMutation";
 import useUserStore from "@/stores/user-store";
+import { toFarsiNumber } from "@/helper/utils/toFarsiNumber";
 
 const Rate = () => {
     const [error, setError] = useState("");
@@ -26,7 +27,7 @@ const Rate = () => {
                     <AiFillStar className="text-[#faaf00]" />
                     <p className="text-center">امتیاز به راننده</p>
                 </div>
-                <div className="flex mt-5 flex-col ltr justify-center items-center">
+                <div className="flex mt-5 flex-col relative ltr justify-center items-center">
                     <Rating
                         size="large"
                         value={value}
@@ -34,6 +35,11 @@ const Rate = () => {
                             setValue(newValue);
                         }}
                     />
+                    <ul className="flex items-center gap-[23px]">
+                      {new Array(5).fill(5).map((item,idx) =>(
+                        <li className="font-bold">{toFarsiNumber(idx+1)}</li>
+                      ))}
+                    </ul>
                     {error && <span className="text-red-500 font-artin-regular pt-3">{error}</span>}
                 </div>
 

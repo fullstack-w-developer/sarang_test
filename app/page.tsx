@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 import Logo from "@/assets/images/logo.svg";
 import useGlobalStore from "@/stores/global-store";
 import { useRouter } from "next/navigation";
+import Gauie from "@/components/common/Gauie";
 
 export default function Home() {
     const { setIsDriver } = useGlobalStore();
@@ -37,7 +38,7 @@ export default function Home() {
                 >
                     <Image src={Logo} alt="logo" />
                     <motion.h1 className={`font-artin-black text-black text-2xl text-center  `}>
-                        به آپلیکیشن سارنگ خوش آمدید
+                        به آپلیکیشن تاکسی‌نو خوش آمدید
                     </motion.h1>
                 </motion.div>
                 <motion.div
@@ -67,6 +68,7 @@ export default function Home() {
                     </button>
                 </motion.div>
             </div>
+            {/* <Gauie/> */}
         </div>
     );
 }

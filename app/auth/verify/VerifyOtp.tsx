@@ -35,7 +35,7 @@ const VerifyOtp = () => {
                 <div className=" py-14 flex  w-90  items-center justify-between">
                     <div className="flex z-50 gap-3 items-center justify-between">
                         <Image className="w-12 h-12" src={Logo} alt="" />
-                        <p className="font-artin-regular text-xl">سارنگ</p>
+                        <p className="font-artin-regular text-xl">تاکسی‌نو</p>
                     </div>
                     <button className="z-[9999]" onClick={() => router.back()}>
                         <BsArrowLeftShort size={34} />

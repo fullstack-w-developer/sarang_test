@@ -17,7 +17,7 @@ const Getotp = ({ text, formik, isLogin, isPass }: Props) => {
                 <div className="w-[85%] mx-auto">
                     <Image className="mx-auto" src={Logo} alt="لوگو" />
                     <div className="pt-5 flex flex-col gap-4 justify-center items-center">
-                        <p className="font-artin-regular">به اپلیکیشن سارنگ</p>
+                        <p className="font-artin-regular">به اپلیکیشن تاکسی‌نو</p>
                         <div className="flex gap-2 items-center">
                             <span className="w-14 h-[0.1rem] bg-white"></span>
                             <span className="w-[0.14rem] h-[0.14rem] bg-white rounded-full"></span>
