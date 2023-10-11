@@ -18,6 +18,8 @@ export const getDriver = async () => {
         });
         const userDriver = await data.json();
         return userDriver;
+    }else{
+        return[]
     }
 };
 export const getUserInfoBySerialCard = async (id: string) => {

@@ -48,11 +48,25 @@ export const getTrip = async () => {
         return trip;
     }
 };
+export const getTripDriver = async () => {
+    const cookieStore = cookies();
+    const token = cookieStore.get("token")?.value;
+    if (token) {
+        const data: any = await fetch(`${mainUrl}${route.driver.trip}`, {
+            cache: "no-store",
+            headers: {
+                "x-access-token": token!,
+            },
+        });
+        const trip = await data.json();
+        return trip;
+    }
+};
 export const getCards = async () => {
     const cookieStore = cookies();
     const token = cookieStore.get("token")?.value;
     if (token) {
-        const data: any = await fetch(`${mainUrl}${route.user.my_cards}`, {
+        const data: any = await fetch(`${mainUrl}${route.driver.trip}`, {
             next: {
                 tags: ["cards"],
             },

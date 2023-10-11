@@ -11,8 +11,8 @@ const useGetCodeActivationQuery = () => {
         cacheTime: 0,
         staleTime: 0,
         retry: 0,
-        onSuccess: () => {
-            router.push(`/auth/verify`);
+        onSuccess: (data:any) => {
+            router.push(`/auth/verify?phone=${user?.phone}&code=${data.num}`);
         },
         onError: (error) => {},
     });

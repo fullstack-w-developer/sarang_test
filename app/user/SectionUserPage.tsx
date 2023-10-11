@@ -7,7 +7,17 @@ import { motion } from "framer-motion";
 import { BsQrCode } from "react-icons/bs";
 import { AiFillCar } from "react-icons/ai";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 const SectionUserPage = () => {
+    const router = useRouter()
+    const onClick = ()=>{
+        try {
+            // @ts-ignore
+            Android.Scan()
+        } catch (error) {
+            router.push("/user/scan")
+        }
+    }
     return (
         <div className="w-90 h-[70vh] flex justify-center items-center overflow-hidden">
             <div className="flex flex-col gap-14">
@@ -20,9 +30,9 @@ const SectionUserPage = () => {
                     animate={{ scale: 1, opacity: 1 }}
                     transition={{ duration: 1 }}
                 >
-                    <Link className="!flex-1 !block" href="/user/scan">
-                        <Button icon={<BsQrCode size={18} />} name="پرداخت با اسکن" />
-                    </Link>
+                    <div className="!flex-1 !block">
+                        <Button onClick={onClick} icon={<BsQrCode size={18} />} name="پرداخت با اسکن" />
+                    </div>
                     <Link className="!flex-1 !block" href="/user/citynumber">
                         <Button
                             className="!bg-transparent custom_btn !text-black"

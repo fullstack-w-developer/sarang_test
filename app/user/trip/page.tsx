@@ -5,7 +5,8 @@ import Trips from "./Trips";
 
 const Trip = async () => {
     const trips: Trip[] = await getTrip();
-    return <Trips trips={trips} />;
+    console.log(trips,"kdkdkkddk")
+    return <Trips trips={trips} />
 };
 
 export default Trip;
