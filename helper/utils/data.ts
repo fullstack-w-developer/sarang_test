@@ -2,7 +2,7 @@
 import Home from "@/app/page";
 import { Dash, Home_icons, User_icon, Wallet_icon } from "@/components/icons/icons";
 import { GridColDef, GridValueGetterParams } from "@mui/x-data-grid";
-import { BiLogoTelegram, BiSupport } from "react-icons/bi";
+import { BiLogoTelegram, BiMoney, BiSupport } from "react-icons/bi";
 import { BsDiscord, BsFillCreditCardFill, BsTwitter } from "react-icons/bs";
 import { FaCar } from "react-icons/fa";
 import { IoLogoWhatsapp } from "react-icons/io";
@@ -91,14 +91,14 @@ export const PaymentTypeEnum = {
 
 export const moreMenuUser = [
     {
-        name: "کارت‌ها",
-        icon: BsFillCreditCardFill,
-        url: "/user/cards",
-    },
-    {
         name: "سفر‌های من",
         icon: FaCar,
         url: "/user/trip",
+    },
+    {
+        name: "شارژ حساب",
+        icon: BiMoney,
+        url: "/user/sharje",
     },
     // {
     //     name: "پشتیبانی",

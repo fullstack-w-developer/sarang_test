@@ -34,6 +34,7 @@ const apiRoutes = {
         deActiveCard: "/Cards/myCards",
         getDetilsByCard: "/cards",
         transferMoney: "/Cards/TransferMoney",
+        balance:"/users/balance"
     },
     counter: {
         user_userInfo_by_cardId: "/cards",

@@ -97,3 +97,21 @@ export const getDetaisUserBySerialCard = async (id: string) => {
         return deatils[0];
     }
 };
+
+export const sharjeAccountUser = async (body:any) => {
+    const cookieStore = cookies();
+    const token = cookieStore.get("token")?.value;
+    if (token) {
+        const data: any = await fetch(`${mainUrl}${route.user.balance}`, {
+            headers: {
+                "x-access-token": token!,
+                "Content-Type": "application/json",
+            },
+            method:"POST",
+            body
+        });
+        const user = await data.json();
+        console.log(user)
+        return user;
+    }
+};

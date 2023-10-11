@@ -30,6 +30,10 @@ export const checkCodeLogin = async (data: CheckCode) => {
     const url = getRoute({ route: `${routes.auth.checkCodeLogin}` });
     return await client<{ token: string }>({ url, method: "POST", data });
 };
+export const sharjeAccountUser = async (data: CheckCode) => {
+    const url = getRoute({ route: `${routes.user.balance}` });
+    return await client<any>({ url, method: "POST", data });
+};
 
 export const editUserInfo = async (data: EditUser) => {
     const url = getRoute({ route: `${routes.auth.edit_user}` });

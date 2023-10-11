@@ -20,3 +20,6 @@ export const validationSchemaForgetPass = Yup.object({
 export const validationSchemaCheckCode = Yup.object({
     Code: Yup.string().required("فیلد اجباری است"),
 });
+export const validationSchemaAmount = Yup.object({
+    amount: Yup.string().required("فیلد اجباری است"),
+});

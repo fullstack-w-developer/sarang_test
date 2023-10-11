@@ -56,3 +56,19 @@ export const readAllNotifications = async () => {
         return result;
     }
 };
+
+
+export const getTrasactions = async () => {
+    const cookieStore = cookies();
+    const token = cookieStore.get("token")?.value;
+    if (token) {
+        const data: any = await fetch(`${mainUrl}${route.user.my_transactions}`, {
+            headers: {
+                "x-access-token": token!,
+                "Content-Type": "application/json",
+            },
+        });
+        const result = await data.json();
+        return result;
+    }
+};
