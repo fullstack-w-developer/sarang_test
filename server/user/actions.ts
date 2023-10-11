@@ -38,7 +38,7 @@ export const getTrip = async () => {
     const cookieStore = cookies();
     const token = cookieStore.get("token")?.value;
     if (token) {
-        const data: any = await fetch(`${mainUrl}${route.user.trip}`, {
+        const data: any = await fetch(`${mainUrl}${route.user.trip}?skip=0&limit=1000`, {
             cache: "no-store",
             headers: {
                 "x-access-token": token!,
@@ -52,7 +52,7 @@ export const getTripDriver = async () => {
     const cookieStore = cookies();
     const token = cookieStore.get("token")?.value;
     if (token) {
-        const data: any = await fetch(`${mainUrl}${route.driver.trip}`, {
+        const data: any = await fetch(`${mainUrl}${route.driver.trip}?skip=0&limit=1000`, {
             cache: "no-store",
             headers: {
                 "x-access-token": token!,

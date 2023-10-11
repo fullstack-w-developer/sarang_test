@@ -26,7 +26,7 @@ const ScanComponent = () => {
             handleStop();
         };
 
-        await html5QrCode.start({ facingMode: "user" }, qrConfig, qrCodeSuccessCallback);
+        await html5QrCode.start({ facingMode: "uenvironmentser" }, qrConfig, qrCodeSuccessCallback);
     };
 
     const handleStop = () => {
@@ -49,7 +49,7 @@ const ScanComponent = () => {
     };
 
     const onResult = () => {
-        redirect(`/driver/inquiry?serial=${"64bcf9aa1bfe1213123f5ad4"}&type=${PaymentTypeEnum.DRIVER_SCAN_USER_CARD}`);
+        router.push(`/driver/inquiry?serial=${"64bcf9aa1bfe1213123f5ad4"}&type=${PaymentTypeEnum.DRIVER_SCAN_USER_CARD}`);
         return handleStop();
     };
 
