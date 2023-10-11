@@ -13,7 +13,7 @@ const SectionUserPage = () => {
     const onClick = ()=>{
         try {
             // @ts-ignore
-            Android.Scan()
+            Android.Scan({type:"user"})
         } catch (error) {
             router.push("/user/scan")
         }

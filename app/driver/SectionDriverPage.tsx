@@ -7,7 +7,9 @@ import { motion } from "framer-motion";
 import { BsQrCode } from "react-icons/bs";
 import Link from "next/link";
 import { BiUser } from "react-icons/bi";
+import { useRouter } from "next/navigation";
 const SectionDriverPage = () => {
+ 
     return (
         <div className="w-90 h-[70vh] flex justify-center items-center overflow-hidden">
             <div className="flex flex-col gap-14">
