@@ -37,7 +37,7 @@ const Rate = () => {
                     />
                     <ul className="flex items-center gap-[23px]">
                       {new Array(5).fill(5).map((item,idx) =>(
-                        <li className="font-bold">{toFarsiNumber(idx+1)}</li>
+                        <li key={idx} className="font-bold">{toFarsiNumber(idx+1)}</li>
                       ))}
                     </ul>
                     {error && <span className="text-red-500 font-artin-regular pt-3">{error}</span>}
