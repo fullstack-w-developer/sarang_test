@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useRef } from "react";
 import { Html5Qrcode } from "html5-qrcode";
-import { useRouter } from "next/navigation";
+import { redirect, useRouter } from "next/navigation";
 import { PaymentTypeEnum } from "@/helper/utils/data";
 import Link from "next/link";
 
@@ -49,7 +49,7 @@ const ScanComponent = () => {
     };
 
     const onResult = () => {
-        router.push(`/driver/inquiry?serial=64bcf9aa1bfe1213123f5ad4&type=${PaymentTypeEnum.DRIVER_SCAN_USER_CARD}`);
+        redirect(`/driver/inquiry?serial=${"64bcf9aa1bfe1213123f5ad4"}&type=${PaymentTypeEnum.DRIVER_SCAN_USER_CARD}`);
         return handleStop();
     };
 

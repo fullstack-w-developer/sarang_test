@@ -10,14 +10,8 @@ interface Props {
     children: React.ReactNode;
 }
 const DriverLayout = ({ user, children }: Props) => {
-    const { setUser, user: userInfo } = useAuthStore();
     const pathname = usePathname();
     const isUserPage = pathname === "/driver" || pathname === "/driver/transactions";
-    useEffect(() => {
-        if (!userInfo?.phone) {
-            setUser({ user });
-        }
-    }, [pathname, userInfo?.phone]);
     return (
         <>
             {isUserPage && <ProfileInfo user={user} />}
