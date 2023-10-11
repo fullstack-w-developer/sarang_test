@@ -1,8 +1,8 @@
 import React from "react";
-import Profile from "./Profile";
 import { getDriver } from "@/services/driver";
+import dynamic from "next/dynamic";
 
-
+const Profile = dynamic(()=> import("./Profile"))
 const Index = async () => {
     const user = await getDriver()
     return <>

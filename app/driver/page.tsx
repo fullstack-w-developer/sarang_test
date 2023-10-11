@@ -1,8 +1,8 @@
 import Menu from "@/components/common/Menu";
 import { menuDriver } from "@/helper/utils/data";
 import React from "react";
-import SectionAdminPage from "./SectionDriverPage";
-
+import dynamic from "next/dynamic";
+const SectionAdminPage = dynamic(()=>import("./SectionDriverPage"),{ssr:false})
 const Driver = async () => {
     return (
         <main>

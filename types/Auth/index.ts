@@ -10,7 +10,7 @@ export type SignupUser = {
 };
 
 export type CheckCode = {
-    Phone: string;
+    Phone?: any;
     Code: number;
 };
 

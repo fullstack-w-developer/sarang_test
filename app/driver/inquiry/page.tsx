@@ -1,7 +1,8 @@
 import { getUserInfoByPhone, getUserInfoBySerialCard } from "@/server/driver/action";
 import React from "react";
-import UserInfo from "./UserInfo";
 import { notFound } from "next/navigation";
+import dynamic from "next/dynamic";
+const UserInfo = dynamic(()=>import("./UserInfo"))
 interface Props {
     searchParams?: { serial?: string; phone: string; type: string };
 }

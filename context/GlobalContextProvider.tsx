@@ -36,7 +36,7 @@ const GlobalContextProvider = ({ children }: GlobalContextProviderProps) => {
     return (
         <QueryClientProvider client={queryClient}>
             {children}
-            <ToastContainer delay={8000} position="top-right" />
+            <ToastContainer delay={16000} position="top-right" />
         </QueryClientProvider>
     );
 };

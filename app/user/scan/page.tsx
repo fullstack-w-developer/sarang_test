@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
-import ScanComponent from "./ScanComponent";
-
+import dynamic from "next/dynamic";
+const ScanComponent = dynamic(()=>import("./ScanComponent"),{ssr:false})
 const Scan = () => {
     return <ScanComponent />;
 };

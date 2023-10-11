@@ -1,6 +1,6 @@
 import React from "react";
-import CityNumber from "./CityNumber";
-
+import dynamic from "next/dynamic";
+const CityNumber = dynamic(()=>import("./CityNumber"),{ssr:false})
 const Page = async () => {
     return <CityNumber />;
 };

@@ -1,24 +1,23 @@
 import { useMutation } from "react-query";
 import { checkCodeLogin, checkCodeSignup } from "@/services/auth";
 import { CheckCode } from "@/types/Auth";
-import { useRouter } from "next/navigation";
+import { useParams, useRouter, useSearchParams } from "next/navigation";
 import axios from "@/services/utils/axios";
 import { useCookies } from "react-cookie";
 import useGlobalStore from "@/stores/global-store";
 import jwt_decode from "jwt-decode";
-import { getMessaging, onMessage } from "firebase/messaging";
-import firebaseApp from "@/helper/utils/firebase/firebase";
 import useFcmToken from "@/hooks/common/useFcmToken";
 import useRigisterNootficationToken from "../notfication/useRigisterNootficationToken";
 import { errorToast } from "@/helper/utils/error";
 
 const useVerifyCode = () => {
+    const searchParams = useSearchParams()
     const { mutate } = useRigisterNootficationToken();
     const { fcmToken } = useFcmToken();
     const { isSignupUser } = useGlobalStore();
     const [, setCookies] = useCookies(["token","jwt"]);
     const router = useRouter();
-    return useMutation(async (data: CheckCode) => (isSignupUser ? checkCodeSignup(data) : checkCodeLogin(data)), {
+    return useMutation(async (data: CheckCode) => (isSignupUser ? checkCodeSignup(data) : checkCodeLogin({...data,Phone:searchParams.get("phone")!})), {
         onSuccess: async function (data: any) {
             if (isSignupUser) {
                 router.push("/auth/signup/information");

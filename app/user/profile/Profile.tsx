@@ -8,11 +8,11 @@ import SocialMedia from "@/components/common/SocialMedia";
 import { Logout_iocn } from "@/components/icons/icons";
 import Menu from "@/components/common/Menu";
 import dynamic from "next/dynamic";
-// import InfoUser from '@/components/common/InfoUser';
 import useAuthStore from "@/stores/auth-store";
 import Logout from "@/components/common/Logout";
 import { User } from "@/types/User";
 import InfoUser from "@/components/common/InfoUser";
+
 const Profile = ({ user }: { user: User }) => {
     const { toggleLogout } = useAuthStore();
 

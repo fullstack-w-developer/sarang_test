@@ -4,7 +4,6 @@ import CardTrip from "@/components/common/CardTrip";
 import { Trip } from "@/types/Driver/ResponseUserTripQuery";
 import React from "react";
 import { motion } from "framer-motion";
-import { animationsScreens, variants } from "@/theme/animations";
 interface Props {
     trips: Trip[];
 }
