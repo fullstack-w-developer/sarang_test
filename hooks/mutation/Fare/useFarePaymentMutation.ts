@@ -5,12 +5,14 @@ import { useRouter } from "next/navigation";
 import Music from "@/assets/music/notfication.mp3";
 import { farePayment } from "@/services/fare";
 import { errorToast } from "@/helper/utils/error";
+import { updateCacheUser } from "@/server/user/actions";
 const useFarePaymentMutation = ({ url }: { url: string }) => {
     const telegramAudioRef = useRef<HTMLAudioElement | undefined>(typeof Audio !== "undefined" ? new Audio(Music) : undefined);
     const router = useRouter();
     return useMutation(async (data: any) => await farePayment(data), {
         onSuccess: async function () {
             await telegramAudioRef.current?.play();
+            updateCacheUser()
             router.push(url);
         },
         onError: async function (error) {

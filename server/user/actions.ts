@@ -13,6 +13,9 @@ export const getUser = async () => {
         axios.defaults.headers.common["x-access-token"] = `${token}`;
         const data: any = await fetch(`${mainUrl}${route.user.me}`, {
             cache: "no-store",
+            next: {
+                tags: ["user-info"],
+            },
             headers: {
                 "x-access-token": token!,
             },
@@ -129,3 +132,8 @@ export const sharjeAccountUser = async (body:any) => {
         return user;
     }
 };
+
+
+export const updateCacheUser = ()=>{
+revalidateTag("user-info")
+}
